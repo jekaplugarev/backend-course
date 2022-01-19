@@ -24,7 +24,7 @@ class PostController {
             const post = await PostService.getOne(req.params.id)
             return res.json(post)
         } catch (e) {
-            res.status(500).json(e)
+            res.status(500).json(e.message)
         }
     }
 
@@ -33,7 +33,7 @@ class PostController {
             const updatedPost = await PostService.update(req.body)
             return res.json(updatedPost)
         } catch (e) {
-            res.status(500).json(e)
+            res.status(500).json(e.message)
         }
     }
 
@@ -42,7 +42,7 @@ class PostController {
             const post = await PostService.delete(req.params.id)
             return res.json(post)
         } catch (e) {
-            res.status(500).json(e)
+            res.status(500).json(e.message)
         }
     }
 }
